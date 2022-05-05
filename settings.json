@@ -1,8 +1,0 @@
-{
-    "python.defaultInterpreterPath": "C:\\Users\\revanth.adiga\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
-    "security.workspace.trust.untrustedFiles": "open",
-    "python.linting.flake8Enabled": true,
-    "editor.formatOnSave": true,
-    "python.formatting.provider": "black",
-    "python.linting.enabled": true
-}
