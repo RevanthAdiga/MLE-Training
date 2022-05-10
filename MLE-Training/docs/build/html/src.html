@@ -1,0 +1,462 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>src package &#8212; Housing Predictions Prices 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Housing Predictions Prices 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">src package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="src-package">
+<h1>src package<a class="headerlink" href="#src-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-src.ingest_data">
+<span id="src-ingest-data-module"></span><h2>src.ingest_data module<a class="headerlink" href="#module-src.ingest_data" title="Permalink to this headline">¶</a></h2>
+<p>Preparation of Datasets</p>
+<p>This module demonstates loading of dataset from a github repository ie.,
+<cite>https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.tgz</cite>
+and preprocess the datasets for training and testing sets.</p>
+<section id="syntax-to-run-the-file">
+<h3>Syntax to run the file<a class="headerlink" href="#syntax-to-run-the-file" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>$ python src/ingest_data.py “Enter the common directory to save the training and testing csv files”</p>
+</div></blockquote>
+</section>
+<section id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Please  note the following librabries need to be installed before you run this module.
+To install the librabries, run this commmand</p>
+<blockquote>
+<div><p>$ pip install -r requirements.txt</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>HOUSING_URL<span class="classifier">str</span></dt><dd><p>Defines the source for the dataset</p>
+</dd>
+<dt>HOUSING_PATH<span class="classifier">str</span></dt><dd><p>Defines the folder in which datasets are extracted</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.ingest_data.CombinedAttributesAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">CombinedAttributesAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add_bedrooms_per_room</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#CombinedAttributesAdder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.CombinedAttributesAdder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Class creates customised attributes to add to the datasets</p>
+<p>BaseEstimator : default
+TransformerMixin : default</p>
+<dl class="simple">
+<dt>np array</dt><dd><p>To add to the preprocessed datasets</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.ingest_data.CombinedAttributesAdder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#CombinedAttributesAdder.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.CombinedAttributesAdder.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.ingest_data.CombinedAttributesAdder.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#CombinedAttributesAdder.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.CombinedAttributesAdder.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ingest_data.fetch_housing_data">
+<span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">fetch_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://raw.githubusercontent.com/ageron/handson-ml/master/datasets/housing/housing.tgz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#fetch_housing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.fetch_housing_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to extract the original datasets</p>
+<p>housing_url : str
+housing_path : str</p>
+<dl class="simple">
+<dt>csv file</dt><dd><p>csv file dowloaded at the specific housing_path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ingest_data.get_data_path">
+<span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">get_data_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#get_data_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.get_data_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the source datasets</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The default directory mentioned to read the datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ingest_data.load_housing_data">
+<span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">load_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#load_housing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.load_housing_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to read the original datasets</p>
+<p>housing_path : str</p>
+<dl class="simple">
+<dt>pd DataFrame</dt><dd><p>DataFrame of the csv file is loaded</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ingest_data.read">
+<span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the data</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The data inside the yaml file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ingest_data.split">
+<span class="sig-prename descclassname"><span class="pre">src.ingest_data.</span></span><span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ingest_data.html#split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ingest_data.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to preprocess the original datasets to obtain a scaled numeric train and test dataframes</p>
+<blockquote>
+<div><p>Please do read read about handling the categorical data using onehotecoder.
+Attention Required on the usuage of Pipelines and CustomTransformers.</p>
+</div></blockquote>
+<p>housing : pd DataFrame
+housing_path : str</p>
+<dl class="simple">
+<dt>csv files</dt><dd><p>csv trainingset_file saved at the specific housing_path
+csv testset_file saved at the specific housing_path</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-src.score">
+<span id="src-score-module"></span><h2>src.score module<a class="headerlink" href="#module-src.score" title="Permalink to this headline">¶</a></h2>
+<p>Testing and Evaluation of Datasets</p>
+<p>This module demonstates testing the models based on testing datasets and resulted models
+so that it can used for predictions and evaluation of models</p>
+<section id="id1">
+<h3>Syntax to run the file<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>$ python src/score.py “Enter the common directory to load the regression models”</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3>Notes<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Please  note the following librabries need to be installed before you run this module.
+To install the librabries, run this commmand</p>
+<blockquote>
+<div><p>$ pip install -r requirements.txt</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="id3">
+<h3>Attributes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>HOUSING_PATH<span class="classifier">str</span></dt><dd><p>Defines the folder in which datasets are extracted</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.score.configure_logger">
+<span class="sig-prename descclassname"><span class="pre">src.score.</span></span><span class="sig-name descname"><span class="pre">configure_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">console</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DEBUG'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/score.html#configure_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.score.configure_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured file to save the logs</p>
+<dl class="simple">
+<dt>log_file<span class="classifier">file</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The datalogs of the program to be stored in log file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.score.eval_metrics">
+<span class="sig-prename descclassname"><span class="pre">src.score.</span></span><span class="sig-name descname"><span class="pre">eval_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/score.html#eval_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.score.eval_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to evaluate based on predicted and original values.</p>
+<p>actual : list
+pred : list</p>
+<p>rmse : float
+mae : float
+r2 : float</p>
+<blockquote>
+<div><p>Results in metrics evaluation of the lists</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.score.get_folder_path">
+<span class="sig-prename descclassname"><span class="pre">src.score.</span></span><span class="sig-name descname"><span class="pre">get_folder_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/score.html#get_folder_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.score.get_folder_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the testing preprocessed datasets</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The default directory mentioned to read the datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.score.read">
+<span class="sig-prename descclassname"><span class="pre">src.score.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/score.html#read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.score.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the data</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The data inside the yaml file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.score.score">
+<span class="sig-prename descclassname"><span class="pre">src.score.</span></span><span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Lin_reg.pkl'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/score.html#score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.score.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to result the predicted outputs on testing datasets and evaluate the respective models</p>
+<p>housing_path : str
+model : ML model</p>
+<p>rmse : float
+mae : float
+r2 : float</p>
+<blockquote>
+<div><p>Results in metrics evaluation of the saved models based on testing_datasets</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-src.train">
+<span id="src-train-module"></span><h2>src.train module<a class="headerlink" href="#module-src.train" title="Permalink to this headline">¶</a></h2>
+<p>Training of Datasets</p>
+<p>This module demonstates training the models based on training datasets and results models
+that can used for predictions and evaluation of models</p>
+<section id="id4">
+<h3>Syntax to run the file<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>$ python src/train.py “Enter the common directory to save the regression models”</p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h3>Notes<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Please  note the following librabries need to be installed before you run this module.
+To install the librabries, run this commmand</p>
+<blockquote>
+<div><p>$ pip install -r requirements.txt</p>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="id6">
+<h3>Attributes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>HOUSING_PATH<span class="classifier">str</span></dt><dd><p>Defines the folder in which datasets are extracted</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.train.configure_logger">
+<span class="sig-prename descclassname"><span class="pre">src.train.</span></span><span class="sig-name descname"><span class="pre">configure_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">console</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DEBUG'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/train.html#configure_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.train.configure_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured file to save the logs</p>
+<dl class="simple">
+<dt>log_file<span class="classifier">file</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The datalogs of the program to be stored in log file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.train.get_folder_path">
+<span class="sig-prename descclassname"><span class="pre">src.train.</span></span><span class="sig-name descname"><span class="pre">get_folder_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/train.html#get_folder_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.train.get_folder_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the training preprocessed datasets</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The default directory mentioned to read the datasets.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.train.read">
+<span class="sig-prename descclassname"><span class="pre">src.train.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/train.html#read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.train.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the configured path ie., env.yaml file to get the data</p>
+<dl class="simple">
+<dt>config_path<span class="classifier">str</span></dt><dd><p>The first parameter.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>string</dt><dd><p>The data inside the yaml file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.train.training">
+<span class="sig-prename descclassname"><span class="pre">src.train.</span></span><span class="sig-name descname"><span class="pre">training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">LinearRegression()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Lin_Reg.pkl'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/train.html#training"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.train.training" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to result the specific model training required on training datasets</p>
+<p>housing_path : str
+model : ML model
+save_model : str</p>
+<dl class="simple">
+<dt>saved_model</dt><dd><p>Results in storing the trained model in respective model directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-src">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.CombinedAttributesAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">CombinedAttributesAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add_bedrooms_per_room</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src.html#CombinedAttributesAdder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.CombinedAttributesAdder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.CombinedAttributesAdder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src.html#CombinedAttributesAdder.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.CombinedAttributesAdder.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.CombinedAttributesAdder.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src.html#CombinedAttributesAdder.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.CombinedAttributesAdder.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.eval_metrics">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">eval_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src.html#eval_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.eval_metrics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.load_data">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.load_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">src package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-src.ingest_data">src.ingest_data module</a><ul>
+<li><a class="reference internal" href="#syntax-to-run-the-file">Syntax to run the file</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.score">src.score module</a><ul>
+<li><a class="reference internal" href="#id1">Syntax to run the file</a></li>
+<li><a class="reference internal" href="#id2">Notes</a></li>
+<li><a class="reference internal" href="#id3">Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.train">src.train module</a><ul>
+<li><a class="reference internal" href="#id4">Syntax to run the file</a></li>
+<li><a class="reference internal" href="#id5">Notes</a></li>
+<li><a class="reference internal" href="#id6">Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/src.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Housing Predictions Prices 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">src package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Shashank C.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+    </div>
+  </body>
+</html>

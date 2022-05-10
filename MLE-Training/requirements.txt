@@ -1,0 +1,13 @@
+numpy
+feature-engine
+joblib
+pandas
+Pillow
+pytest
+requests
+scikit-learn
+scipy
+seaborn
+six
+twine
+urllib3
